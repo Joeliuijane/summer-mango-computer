@@ -1,0 +1,458 @@
+
+/*********** Nav Bar CSS **********/
+/**********************************/
+body {
+    color: #777777;
+    font-weight: 500;
+    background: #faf8f3 ;
+    font-family: 'Noto Serif JP', sans-serif;
+}
+
+.navbar {
+    position: relative;
+    transition: .5s;
+    z-index: 999;
+    margin-top: 0 !important;
+    top: 0 !important;
+}
+
+.navbar.nav-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    transition: .5s;
+}
+
+.navbar .navbar-brand {
+    margin: 0;
+    color: #ffffff;
+    font-size: 45px;
+    line-height: 0px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.navbar .navbar-brand img {
+    max-width: 100%;
+    max-height: 40px;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    padding: 10px 15px 8px 15px;
+    color: #f3a643;/*header字體顏色*/
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ff4000;/*header點擊後字體顏色*/
+    transition: none;
+}
+
+.navbar .dropdown-menu {
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    background: #f8f9fa; 
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        position: absolute;
+        width: 100%;
+        top: 45px;
+        padding: 20px 60px;
+        background: transparent !important;
+        border-bottom: 1px solid rgba(255, 255, 255, .3);
+        z-index: 9;
+    }
+    
+    .navbar.nav-sticky {
+        padding: 10px 60px;
+        background: rgba(255, 254, 249, 0.8) !important; /*header顏色*/
+        border-bottom: none;
+    }
+    
+    .page .navbar {
+        background: #20212B !important;
+    }
+    
+    .navbar a.nav-link {
+        padding: 8px 15px;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 991.98px) {   
+    .navbar {
+        padding: 15px;
+        background: #20212B !important;
+    }
+    
+    .navbar a.nav-link {
+        padding: 5px;
+    }
+    
+    .navbar .dropdown-menu {
+        box-shadow: none;
+    }
+}
+
+
+/* ========== 頂端隱藏 header ========== */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  pointer-events: none; /* 隱藏時不擋點擊 */
+}
+.site-header .navbar {
+  pointer-events: auto;
+  transition: transform 1s ease, opacity .35s ease;
+}
+
+/* 一進頁面：完全隱藏 */
+.site-header.hidden .navbar {
+  transform: translateY(-120%);
+  opacity: 0;
+}
+
+/* 滾動後：出現，沿用 sticky 規則 */
+.site-header.visible .navbar {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/********** Hero CSS ***********/
+
+
+/* myfooter start*/
+/* ====== 玻璃板參數（可調） ====== */
+:root{
+  --glass-tint: 245, 222, 179;   /* 麥色 F5DEB3 的 RGB */
+  --glass-alpha: .82;            /* 透明度 */
+  --glass-blur: 12px;            /* 模糊強度 */
+  --glass-radius: 20px;          /* 圓角 */
+  --glass-shadow: 0 20px 40px rgba(0,0,0,.12);
+  --glass-border: 1px solid rgba(255,255,255,.35);
+}
+
+/* Footer 外距 */
+#site-footer.footer-modern{
+  position: relative;
+  z-index: 10;
+  padding: clamp(32px, 4vw, 56px) 0;
+  background: transparent;
+}
+
+/* 半透明玻璃板 */
+#site-footer .footer-panel{
+  position: relative;
+  margin-inline: clamp(12px, 3.2vw, 48px);
+  padding: clamp(20px, 2.6vw, 40px);
+  border-radius: var(--glass-radius);
+  background: rgba(var(--glass-tint), var(--glass-alpha));
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  isolation: isolate; /* 限制 backdrop-filter 範圍 */
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(110%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(110%);
+}
+
+/* Grid 版型：品牌 + 4 欄 / 第二排 3 欄   26/1/20有改成3藍  */
+#site-footer .footer-grid{
+  display: grid;
+  gap: clamp(16px, 2.2vw, 28px) clamp(18px, 2.6vw, 40px);
+
+  /* Logo + 3 個平均欄位 */
+  grid-template-columns:
+    minmax(200px, 260px)   /* Logo */
+    repeat(3, 1fr);        /* 三個文字區平均撐滿 */
+
+  align-items: start;
+}
+
+
+/* 社群 icon（只影響 ig / yt，不影響其他連結） */
+#site-footer .icon-ig::before,
+#site-footer .icon-yt::before{
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Instagram */
+#site-footer .icon-ig::before{
+  background-image: url("/img/icon-instagram.svg");
+}
+
+/* YouTube */
+#site-footer .icon-yt::before{
+  background-image: url("/img/icon-youtube.svg");
+}
+
+/* 260120改 end */
+
+
+
+
+
+/* 左上 Logo 佔兩排 */
+#site-footer .footer-brand{
+  grid-row: 1 / span 2;
+   max-width: clamp(400px, 20vw, 420px);  /* ← 調這三個數字就能更大/更小 */
+  align-self: start;
+}
+#site-footer .footer-brand img{
+  display: block;
+  max-width: clamp(160px, 12vw, 240px);
+  height: auto;
+}
+
+/* 欄位標題與清單 */
+#site-footer .footer-col h4{
+  margin: 0 0 .6rem;
+  font-weight: 700;
+  font-size: clamp(20px, 1.1rem + .6vw, 24px);
+  letter-spacing: .04em;
+}
+#site-footer .footer-list{
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid; gap: .5rem;
+}
+#site-footer .footer-list a{
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  transition: opacity .2s ease, transform .2s ease;
+}
+#site-footer .footer-list a:hover{
+  opacity: 1; transform: translateX(2px);
+}
+
+/* RWD：平板兩欄、手機一欄 */
+@media (max-width: 992px){
+  #site-footer .footer-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+  #site-footer .footer-brand{
+    grid-row: auto;
+    grid-column: 1 / -1;
+    margin-bottom: .5rem;
+  }
+}
+@media (max-width: 576px){
+  #site-footer .footer-grid{ grid-template-columns: 1fr; }
+  #site-footer .footer-panel{ margin-inline: 16px; }
+}
+
+/* 讓玻璃板脫離 container 的限制，置中且寬 = 100vw */
+#site-footer.footer--bleed .footer-panel{
+  width: 90vw;
+  max-width: none;
+  margin-left: 50%;
+  transform: translateX(-50%);  /* ← 置中 */
+  padding: clamp(28px, 4.5vw, 68px);
+  border-radius: 24px;
+}
+
+/* 手機邊緣太貼可略收一點（可選） */
+@media (max-width: 576px){
+  #site-footer.footer--bleed .footer-panel{
+    width: calc(100vw - 16px);
+  }
+}
+
+/* 若你的頁面有 .noise-bg（紙質噪點），確保噪點在玻璃板底下 */
+#site-footer.noise-bg::before{ z-index: 0; }
+#site-footer.noise-bg > *{ position: relative; z-index: 1; }
+
+/* myfooter end */
+
+/* ====================================================================================================================================================================== */
+
+
+
+
+
+/* ===== 共用 ===== */
+.say-section {
+  position: relative;
+}
+
+/* ========================= */
+/* 區塊一：圖文不同步滑動    */
+/* ========================= */
+.block1 {
+  min-height: 200vh;
+  padding: 120px 0 80px;  /* 上方騰出空間，不會壓到 navbar */
+  display: flex;
+  align-items: center;
+}
+
+
+.b1-container {
+  width: min(1100px, 90vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr;
+  gap: 4vw;
+  align-items: center;
+}
+
+/* 左側圖片群 */
+.b1-images {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 每張圖各自有一點上下位移＋依照 --b1-rot 旋轉 */
+.b1-img {
+  width: 100%;
+  padding-top: 70%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  will-change: transform;
+  transition: transform 0.25s ease-out;
+}
+
+/* 讓每張圖有不同的基礎位移與旋轉方向 */
+.b1-img-1 {
+  transform: translateY(-10px) rotate(calc(var(--b1-rot, 0) * 1deg));
+}
+.b1-img-2 {
+  transform: translateY(0px) rotate(calc(var(--b1-rot, 0) * -0.6deg));
+}
+.b1-img-3 {
+  transform: translateY(10px) rotate(calc(var(--b1-rot, 0) * 0.8deg));
+}
+.b1-img-4 {
+  transform: translateY(-4px) rotate(calc(var(--b1-rot, 0) * -0.4deg));
+}
+
+
+.b1-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 右側三段文字 */
+.b1-text {
+  font-family: "Noto Serif TC", "Noto Serif HK", serif;
+  font-size: clamp(18px, 2.1vw, 22px);
+  line-height: 1.8;
+}
+
+.b1-line {
+  margin-bottom: 1.8rem;
+  opacity: 0;
+  transform: translateY(var(--b1-line-y, 40px));
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+/* 被 JS 加上 .is-visible 後淡入 */
+.b1-line.is-visible {
+  opacity: 1;
+}
+
+/* RWD：下方圖片、上方文字改成上下排 */
+@media (max-width: 768px) {
+  .b1-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 60px 0;
+  }
+
+  .b1-images {
+    order: 2;
+  }
+
+  .b1-text {
+    order: 1;
+  }
+}
+
+/* ========================= */
+/* 區塊二：橫向移動 + 閃爍   */
+/* ========================= */
+.block2 {
+  padding: 80px 0 100px;
+}
+
+.b2-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.b2-track {
+  display: flex;
+  gap: 16px;
+  padding-inline: 5vw;
+  will-change: transform;
+  transform: translateX(var(--b2-x, 0px));
+  transition: transform 0.2s ease-out;
+}
+
+.b2-photo {
+  flex-shrink: 0;
+  height: min(260px, 40vh);
+  width: auto;
+  object-fit: cover;
+  border-radius: 18px;
+  /* 閃爍動畫（每張不同步） */
+  animation-name: mango-flicker;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* 不同張給不同 duration / delay */
+.b2-photo:nth-child(1) {
+  animation-duration: 3.2s;
+  animation-delay: 0.2s;
+}
+.b2-photo:nth-child(2) {
+  animation-duration: 3.8s;
+  animation-delay: 0.9s;
+}
+.b2-photo:nth-child(3) {
+  animation-duration: 4.1s;
+  animation-delay: 0.4s;
+}
+.b2-photo:nth-child(4) {
+  animation-duration: 3.5s;
+  animation-delay: 1.1s;
+}
+.b2-photo:nth-child(5) {
+  animation-duration: 4.4s;
+  animation-delay: 0.7s;
+}
+
+/* 閃爍 keyframes：不要太劇烈 */
+@keyframes mango-flicker {
+  0%, 20%   { opacity: 1; }
+  25%       { opacity: 0.4; }
+  30%       { opacity: 1; }
+  55%       { opacity: 0.6; }
+  60%       { opacity: 1; }
+  80%       { opacity: 0.3; }
+  85%, 100% { opacity: 1; }
+}

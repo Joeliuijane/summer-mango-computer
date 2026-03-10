@@ -1,0 +1,656 @@
+/*******************************/
+/********* General CSS *********/
+/*******************************/
+body {
+    color: #777777;
+    font-weight: 500;
+    background: #f8f9fa;
+    font-family: 'Noto Serif JP', sans-serif;
+}
+
+h1,
+h2, 
+h3, 
+h4,
+h5, 
+h6 {
+    color: #4a4c70;
+}
+
+a {
+    color: #4a4c70;
+    transition: .3s;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #FDBE33;
+    outline: none;
+    text-decoration: none;
+}
+
+.btn.btn-custom {
+    padding: 12px 20px;
+    text-align: center; 
+   font-size: 16px;
+    font-weight: 500;
+    color: #777777;
+    border-radius: 0;
+    border: 2px solid #FDBE33;
+    box-shadow: inset 0 0 0 0 #FDBE33;
+    transition: ease-out 0.3s;
+    -webkit-transition: ease-out 0.3s;
+    -moz-transition: ease-out 0.3s;
+}
+
+.btn.btn-custom:hover {
+    color: #20212B;
+    box-shadow: inset 0 0 0 30px #FDBE33;
+}
+
+.btn:focus,
+.form-control:focus {
+    box-shadow: none;
+}
+
+.container-fluid {
+    max-width: 1366px;
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+    font-size: inherit;
+    margin-left: 0;
+}
+
+
+/**********************************/
+/****** Loader & Back to Top ******/
+/**********************************/
+#loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity .3s ease-out, visibility 0s linear .3s;
+    -o-transition: opacity .3s ease-out, visibility 0s linear .3s;
+    transition: opacity .3s ease-out, visibility 0s linear .3s;
+    z-index: 999;
+}
+
+#loader.show {
+    -webkit-transition: opacity .6s ease-out, visibility 0s linear 0s;
+    -o-transition: opacity .6s ease-out, visibility 0s linear 0s;
+    transition: opacity .6s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+#loader .loader {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border: 5px solid #dddddd;
+    border-top: 5px solid #FDBE33;
+    border-radius: 50%;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    background: #FDBE33;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 1;
+    font-size: 22px;
+    right: 15px;
+    bottom: 15px;
+    transition: background 0.5s;
+    z-index: 9;
+}
+
+.back-to-top i {
+    color: #4a4c70;
+    padding-top: 10px;
+}
+
+.back-to-top:hover {
+    background: #4a4c70;
+}
+
+.back-to-top:hover i {
+    color: #FDBE33;
+}
+
+
+/**********************************/
+/********** Top Bar CSS ***********/
+/**********************************/
+.top-bar {
+    position: absolute;
+    height: 45px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+
+.top-bar .top-bar-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.top-bar .top-bar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.top-bar .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 45px;
+    padding: 0 10px;
+    text-align: center;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+}
+
+.top-bar .text:last-child {
+    border-right: 1px solid rgba(255, 255, 255, .3);
+}
+
+.top-bar .text i {
+    font-size: 16px;
+    color: #FDBE33;
+    margin-right: 5px;
+}
+
+.top-bar .text p {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.top-bar .social {
+    display: flex;
+    height: 45px;
+    font-size: 0;
+    justify-content: flex-end;
+}
+
+.top-bar .social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 100%;
+    font-size: 16px;
+    color: #FDBE33;
+    border-right: 1px solid rgba(255, 255, 255, .3);
+}
+
+.top-bar .social a:first-child {
+    border-left: 1px solid rgba(255, 255, 255, .3);
+}
+
+.top-bar .social a:hover {
+    color: #ffffff;
+    background: #FDBE33;
+}
+
+@media (min-width: 992px) {
+    .top-bar {
+        padding: 0 60px;
+    }
+}
+
+
+/**********************************/
+/*********** Nav Bar CSS **********/
+/**********************************/
+.navbar {
+    position: relative;
+    transition: .5s;
+    z-index: 999;
+    margin-top: 0 !important;
+    top: 0 !important;
+}
+
+.navbar.nav-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    transition: .5s;
+}
+
+.navbar .navbar-brand {
+    margin: 0;
+    color: #ffffff;
+    font-size: 45px;
+    line-height: 0px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.navbar .navbar-brand img {
+    max-width: 100%;
+    max-height: 40px;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    padding: 10px 15px 8px 15px;
+    color: #f3a643;/*header字體顏色*/
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ff4000;/*header點擊後字體顏色*/
+    transition: none;
+}
+
+.navbar .dropdown-menu {
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    background: #f8f9fa; 
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        position: absolute;
+        width: 100%;
+        top: 45px;
+        padding: 20px 60px;
+        background: transparent !important;
+        border-bottom: 1px solid rgba(255, 255, 255, .3);
+        z-index: 9;
+    }
+    
+    .navbar.nav-sticky {
+        padding: 10px 60px;
+        background: rgba(255, 254, 249, 0.8) !important; /*header顏色*/
+        border-bottom: none;
+    }
+    
+    .page .navbar {
+        background: #20212B !important;
+    }
+    
+    .navbar a.nav-link {
+        padding: 8px 15px;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 991.98px) {   
+    .navbar {
+        padding: 15px;
+        background: #20212B !important;
+    }
+    
+    .navbar a.nav-link {
+        padding: 5px;
+    }
+    
+    .navbar .dropdown-menu {
+        box-shadow: none;
+    }
+}
+
+
+
+
+
+/* myfooter start*/
+/* ====== 玻璃板參數（可調） ====== */
+:root{
+  --glass-tint: 245, 222, 179;   /* 麥色 F5DEB3 的 RGB */
+  --glass-alpha: .82;            /* 透明度 */
+  --glass-blur: 12px;            /* 模糊強度 */
+  --glass-radius: 20px;          /* 圓角 */
+  --glass-shadow: 0 20px 40px rgba(0,0,0,.12);
+  --glass-border: 1px solid rgba(255,255,255,.35);
+}
+
+/* Footer 外距 */
+#site-footer.footer-modern{
+  position: relative;
+  z-index: 10;
+  padding: clamp(32px, 4vw, 56px) 0;
+  background: transparent;
+}
+
+/* 半透明玻璃板 */
+#site-footer .footer-panel{
+  position: relative;
+  margin-inline: clamp(12px, 3.2vw, 48px);
+  padding: clamp(20px, 2.6vw, 40px);
+  border-radius: var(--glass-radius);
+  background: rgba(var(--glass-tint), var(--glass-alpha));
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  isolation: isolate; /* 限制 backdrop-filter 範圍 */
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(110%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(110%);
+}
+
+/* Grid 版型：品牌 + 4 欄 / 第二排 3 欄 */
+#site-footer .footer-grid{
+  display: grid;
+  gap: clamp(16px, 2.2vw, 28px) clamp(18px, 2.6vw, 40px);
+  grid-template-columns: minmax(180px, 240px) repeat(4, minmax(160px, 1fr));
+  align-items: start;
+}
+
+/* 左上 Logo 佔兩排 */
+#site-footer .footer-brand{
+  grid-row: 1 / span 2;
+   max-width: clamp(400px, 20vw, 420px);  /* ← 調這三個數字就能更大/更小 */
+  align-self: start;
+}
+#site-footer .footer-brand img{
+  display: block;
+  max-width: clamp(160px, 12vw, 240px);
+  height: auto;
+}
+
+/* 欄位標題與清單 */
+#site-footer .footer-col h4{
+  margin: 0 0 .6rem;
+  font-weight: 700;
+  font-size: clamp(16px, .95rem + .3vw, 18px);
+  letter-spacing: .02em;
+}
+#site-footer .footer-list{
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid; gap: .5rem;
+}
+#site-footer .footer-list a{
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  transition: opacity .2s ease, transform .2s ease;
+}
+#site-footer .footer-list a:hover{
+  opacity: 1; transform: translateX(2px);
+}
+
+/* RWD：平板兩欄、手機一欄 */
+@media (max-width: 992px){
+  #site-footer .footer-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+  #site-footer .footer-brand{
+    grid-row: auto;
+    grid-column: 1 / -1;
+    margin-bottom: .5rem;
+  }
+}
+@media (max-width: 576px){
+  #site-footer .footer-grid{ grid-template-columns: 1fr; }
+  #site-footer .footer-panel{ margin-inline: 16px; }
+}
+
+/* 讓玻璃板脫離 container 的限制，置中且寬 = 100vw */
+#site-footer.footer--bleed .footer-panel{
+  width: 90vw;
+  max-width: none;
+  margin-left: 50%;
+  transform: translateX(-50%);  /* ← 置中 */
+  padding: clamp(28px, 4.5vw, 68px);
+  border-radius: 24px;
+}
+
+/* 手機邊緣太貼可略收一點（可選） */
+@media (max-width: 576px){
+  #site-footer.footer--bleed .footer-panel{
+    width: calc(100vw - 16px);
+  }
+}
+
+/* 若你的頁面有 .noise-bg（紙質噪點），確保噪點在玻璃板底下 */
+#site-footer.noise-bg::before{ z-index: 0; }
+#site-footer.noise-bg > *{ position: relative; z-index: 1; }
+
+/* myfooter end */
+
+/* ****************************************************************************************************************************************** */
+/* ===== 整體區塊 ===== */
+/* 兩欄格線 */
+.workflow-grid{
+    
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 60px);
+  align-items: start;
+}
+
+/* 卡片基本 */
+.wf-card{ min-height: 80px; }
+.wf-left{ grid-column: 1; }
+.wf-right{ grid-column: 2; }
+
+/* 讓上下交錯（像你圖的節奏） */
+.workflow-grid .wf-card:nth-child(1){ margin-top: 0; }
+.workflow-grid .wf-card:nth-child(2){ margin-top: 40px; }
+.workflow-grid .wf-card:nth-child(3){ margin-top: 120px; }
+.workflow-grid .wf-card:nth-child(4){ margin-top: 140px; }
+
+/* 圖片容器 */
+.wf-media{
+  width: min(520px, 100%);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #faf8f3;
+  z-index:7; 
+  border-radius: 0; /* 你圖是直角感 */
+  transform-origin: center;
+}
+
+/* 圖片本體 */
+.wf-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform-origin: center;
+  will-change: transform;
+  z-index:7;
+}
+
+/* 文字區 */
+.wf-text{
+  width: min(520px, 100%);
+  color: #1b1b1b;
+}
+.wf-kicker{
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: .14em;
+  opacity: .7;
+}
+.wf-title{
+  margin: 0 0 10px;
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 700;
+}
+.wf-desc{
+  margin: 0;
+  line-height: 1.9;
+  opacity: .85;
+}
+
+/* 手機：改單欄 */
+@media (max-width: 900px){
+  .workflow-grid{ grid-template-columns: 1fr; }
+  .wf-left,.wf-right{ grid-column: 1; }
+  .workflow-grid .wf-card{ margin-top: 0 !important; }
+  .workflow-line{ opacity: .25; }
+}
+
+
+/* line */
+/* 線：在最底 */
+/* 內容：在上面（但不要蓋線的關鍵是背景處理） */
+.workflow, #site-footer{
+  position: relative;
+  z-index: 5;              /* ✅ 內容 5 */
+}
+
+/* navbar 最上 */
+.navbar{ position: relative; z-index: 20; }
+
+/* ===== 全頁曲線：用 body::before 畫（最穩） ===== */
+body{
+  position: relative; /* 讓 body::before 有定位基準 */
+}
+
+
+
+
+/* ----------------------------------------調位子區---------------------------------- */
+/* 1) fmk.jpg 往下 */
+.wf-card:nth-child(1) .wf-media{
+  /* transform: translateY(20px); 想更下就加大 */
+  transform: translate(-70px, 24px)
+}
+
+/* 右上文字卡（第 2 張） */
+.workflow-grid .wf-card:nth-child(2){
+  transform: translateY(20px); /* 想再下就加 */
+}
+/* 左下文字卡（第 3 張） */
+.workflow-grid .wf-card:nth-child(3){
+  transform: translateY(24px);
+}
+/* 2) foodblue.jpg 往上 */
+.wf-card:nth-child(4) .wf-media{
+  transform: translate(60px,-18px); /* 想更上就加大 */
+}
+/* =============================================================================== */
+
+
+
+/* ====== 讓曲線跨 workflow 到 footer 的總容器 ====== */
+.page-stage{
+  position: relative;
+}
+
+/* 曲線層：跟著內容長高（關鍵：top/bottom + svg height:100%） */
+.page-curve{
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;     /* ✅ 撐滿整個 page-stage */
+  pointer-events: none;
+  z-index: 1;            /* 線在底色上、內容下 */
+}
+
+.page-curve svg{
+  width: 100%;
+  height: 100%;          /* ✅ 內容越長，線越長 */
+  display: block;
+}
+
+/* 內容層都在曲線上面 */
+.workflow, #site-footer{
+  position: relative;
+  z-index: 2;
+}
+
+/* workflow 白底直接用背景色，不要用 ::before */
+.workflow{ background: #faf8f3; }
+
+/* navbar 最上 */
+.navbar{ position: relative; z-index: 50; }
+
+/* 曲線：跟著頁面一起滾（absolute），不會釘在視窗 */
+.page-stage::before{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  /* ✅ 避開 header：你可微調 120~180 */
+  top: 0px;
+  /* ✅ 一路到 footer 底 */
+  bottom: 0;
+
+  pointer-events:none;
+  z-index: 6;                 /* 線在底色上、內容下 */
+
+  opacity: .9;
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  /* ✅ 線要更長就把第二個數字加大，例如 260% / 320% */
+  background-size: 110% 280%;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 2600'%3E%3Cpath d='M520 0 C470 340 740 520 630 900 C520 1280 840 1480 700 1880 C580 2280 760 2440 690 2600' fill='none' stroke='%231f1f1f' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* ====== workflow 白底（不要蓋住線） ====== */
+/* ===== 容器 ===== */
+
+/* ===== 線：跟著頁面滾（absolute，不是 fixed） ===== */
+.page-curve{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 140px;     /* 避開 header，可調 */
+  bottom: 0;      /* 一路到 footer */
+
+  pointer-events: none;
+  z-index: 0;     /* 線在中間層 */
+
+  opacity: .9;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 110% 280%;  /* 想更長就把 280% 加大 */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 2600'%3E%3Cpath d='M520 0 C470 340 740 520 630 900 C520 1280 840 1480 700 1880 C580 2280 760 2440 690 2600' fill='none' stroke='%231f1f1f' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* footer 內容在最上面（玻璃板不被線蓋） */
+#site-footer{
+  position: relative;
+  z-index: 2;
+}
+
+/* navbar 永遠最上 */
+.navbar{
+  position: relative;
+  z-index: 50;
+}
+

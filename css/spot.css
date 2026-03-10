@@ -1,0 +1,793 @@
+html, body{
+  background: #faf8f3 !important;
+}
+/*********** Nav Bar CSS **********/
+/**********************************/
+.navbar {
+    position: relative;
+    transition: .5s;
+    z-index: 999;
+    margin-top: 0 !important;
+    top: 0 !important;
+}
+
+.navbar.nav-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    transition: .5s;
+}
+
+.navbar .navbar-brand {
+    margin: 0;
+    color: #ffffff;
+    font-size: 45px;
+    line-height: 0px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.navbar .navbar-brand img {
+    max-width: 100%;
+    max-height: 40px;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    padding: 10px 15px 8px 15px;
+    color: #f3a643;/*header字體顏色*/
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ff4000;/*header點擊後字體顏色*/
+    transition: none;
+}
+
+.navbar .dropdown-menu {
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    background: #faf8f3; 
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        position: absolute;
+        width: 100%;
+        top: 45px;
+        padding: 20px 60px;
+        background: transparent !important;
+        border-bottom: 1px solid rgba(255, 255, 255, .3);
+        z-index: 9;
+    }
+    
+    .navbar.nav-sticky {
+        padding: 10px 60px;
+        background: rgba(255, 254, 249, 0.8) !important; /*header顏色*/
+        border-bottom: none;
+    }
+    
+    .page .navbar {
+        background: #20212B !important;
+    }
+    
+    .navbar a.nav-link {
+        padding: 8px 15px;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 991.98px) {   
+    .navbar {
+        padding: 15px;
+        background: #20212B !important;
+    }
+    
+    .navbar a.nav-link {
+        padding: 5px;
+    }
+    
+    .navbar .dropdown-menu {
+        box-shadow: none;
+    }
+}
+
+
+/* ========== 頂端隱藏 header ========== */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  pointer-events: none; /* 隱藏時不擋點擊 */
+}
+.site-header .navbar {
+  pointer-events: auto;
+  transition: transform 1s ease, opacity .35s ease;
+}
+
+/* 一進頁面：完全隱藏 */
+.site-header.hidden .navbar {
+  transform: translateY(-120%);
+  opacity: 0;
+}
+
+/* 滾動後：出現，沿用 sticky 規則 */
+.site-header.visible .navbar {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/********** Hero CSS ***********/
+
+
+/* myfooter start*/
+/* ====== 玻璃板參數（可調） ====== */
+:root{
+  --glass-tint: 245, 222, 179;   /* 麥色 F5DEB3 的 RGB */
+  --glass-alpha: .82;            /* 透明度 */
+  --glass-blur: 12px;            /* 模糊強度 */
+  --glass-radius: 20px;          /* 圓角 */
+  --glass-shadow: 0 20px 40px rgba(0,0,0,.12);
+  --glass-border: 1px solid rgba(255,255,255,.35);
+}
+
+/* Footer 外距 */
+#site-footer.footer-modern{
+  position: relative;
+  z-index: 10;
+  padding: clamp(32px, 4vw, 56px) 0;
+  background: transparent;
+}
+
+/* 半透明玻璃板 */
+#site-footer .footer-panel{
+  position: relative;
+  margin-inline: clamp(12px, 3.2vw, 48px);
+  padding: clamp(20px, 2.6vw, 40px);
+  border-radius: var(--glass-radius);
+  background: rgba(var(--glass-tint), var(--glass-alpha));
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  isolation: isolate; /* 限制 backdrop-filter 範圍 */
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(110%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(110%);
+}
+
+/* Grid 版型：品牌 + 4 欄 / 第二排 3 欄   26/1/20有改成3藍  */
+#site-footer .footer-grid{
+  display: grid;
+  gap: clamp(16px, 2.2vw, 28px) clamp(18px, 2.6vw, 40px);
+
+  /* Logo + 3 個平均欄位 */
+  grid-template-columns:
+    minmax(200px, 260px)   /* Logo */
+    repeat(3, 1fr);        /* 三個文字區平均撐滿 */
+
+  align-items: start;
+}
+
+
+/* 社群 icon（只影響 ig / yt，不影響其他連結） */
+#site-footer .icon-ig::before,
+#site-footer .icon-yt::before{
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Instagram */
+#site-footer .icon-ig::before{
+  background-image: url("/img/icon-instagram.svg");
+}
+
+/* YouTube */
+#site-footer .icon-yt::before{
+  background-image: url("/img/icon-youtube.svg");
+}
+
+/* 260120改 end */
+
+
+
+
+
+/* 左上 Logo 佔兩排 */
+#site-footer .footer-brand{
+  grid-row: 1 / span 2;
+   max-width: clamp(400px, 20vw, 420px);  /* ← 調這三個數字就能更大/更小 */
+  align-self: start;
+}
+#site-footer .footer-brand img{
+  display: block;
+  max-width: clamp(160px, 12vw, 240px);
+  height: auto;
+}
+
+/* 欄位標題與清單 */
+#site-footer .footer-col h4{
+  margin: 0 0 .6rem;
+  font-weight: 700;
+  font-size: clamp(20px, 1.1rem + .6vw, 24px);
+  letter-spacing: .04em;
+}
+#site-footer .footer-list{
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid; gap: .5rem;
+}
+#site-footer .footer-list a{
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+  transition: opacity .2s ease, transform .2s ease;
+}
+#site-footer .footer-list a:hover{
+  opacity: 1; transform: translateX(2px);
+}
+
+/* RWD：平板兩欄、手機一欄 */
+@media (max-width: 992px){
+  #site-footer .footer-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+  #site-footer .footer-brand{
+    grid-row: auto;
+    grid-column: 1 / -1;
+    margin-bottom: .5rem;
+  }
+}
+@media (max-width: 576px){
+  #site-footer .footer-grid{ grid-template-columns: 1fr; }
+  #site-footer .footer-panel{ margin-inline: 16px; }
+}
+
+/* 讓玻璃板脫離 container 的限制，置中且寬 = 100vw */
+#site-footer.footer--bleed .footer-panel{
+  width: 90vw;
+  max-width: none;
+  margin-left: 50%;
+  transform: translateX(-50%);  /* ← 置中 */
+  padding: clamp(28px, 4.5vw, 68px);
+  border-radius: 24px;
+}
+
+/* 手機邊緣太貼可略收一點（可選） */
+@media (max-width: 576px){
+  #site-footer.footer--bleed .footer-panel{
+    width: calc(100vw - 16px);
+  }
+}
+
+/* 若你的頁面有 .noise-bg（紙質噪點），確保噪點在玻璃板底下 */
+#site-footer.noise-bg::before{ z-index: 0; }
+#site-footer.noise-bg > *{ position: relative; z-index: 1; }
+
+/* myfooter end */
+
+
+
+
+
+
+
+
+
+/* ================Reset ===============*/
+:root { 
+  --sub-offset-x: 120px;   /* 往右(+) / 往左(-) */
+  --sub-offset-y: -50px;  /* 往下(+) / 往上(-) */
+    --title-shift-y: -90px;   /* 往上 = 負值；往下 = 正值 */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Noto Serif JP', sans-serif;
+  overflow-x: hidden;   /* 只擋橫向 */
+  overflow-y: auto;     /* 允許直向滾動 */
+}
+
+.spot-wrapper {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* 左側區塊縮小一點點，讓圖片可以蓋進來 */
+.spot-left {
+  width: 30%;
+  padding: 8vh 5vw;
+  background-color: #faf8f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  position: relative; overflow: visible;
+
+}
+
+/* 右側圖片區變大一些，往左延伸 */
+.spot-right {
+  width: 70%;  /* > 60% 可吃到左邊 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.spot-copy{
+  position: relative;
+  transform: translateX(10px);   /* 可試 8vw / 10vw */
+}
+
+
+.spot-title {
+  font-size: clamp(48px, 110px, 150px);
+  writing-mode: vertical-rl;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+    white-space: nowrap;     /* 不自動換行 */
+  word-break: keep-all;    /* CJK 不任意斷字 */
+  display: inline-block;   /* 配合 nowrap 較穩定 */
+  color: #161414;
+  position: relative;
+  transform: translateY(var(--title-shift-y));
+  
+}
+
+.spot-subtitle {
+  position: absolute;
+  /* .spot-left 有 padding: 8vh 5vw；以此為基準再加位移 */
+  top:  calc(8vh + var(--sub-offset-y));
+  left: calc(5vw + var(--sub-offset-x));
+  margin: 0;                    /* 不用原本的 margin 推距離 */
+  writing-mode: vertical-rl;    /* 仍然直排 */
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 30px;            /* 想小一點就改這裡 */
+  color: #161414;
+  pointer-events: none; 
+}
+
+.spot-desc {
+  font-size: 1.0rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: all 2s ease-in-out;
+  z-index: 1;
+  transform: translateX(-25%)
+}
+
+.slide.active {
+  left: 0;
+  opacity: 1;
+  z-index: 2;
+  transform: translateX(0);   /* ★ 加這行 */
+}
+
+/* 右下文字浮出 */
+.caption {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  text-align: right;
+  color: #222;
+  text-shadow: 0 0 8px rgba(255,255,255,0.9);
+}
+
+.caption .jp {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.caption .en {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+
+
+
+/* half1 start */
+/* 若有固定 header，填實際高度；沒有就 0 */
+:root { --header-h: 0px;   /* 從 .spot-left 的內邊距基準再做微調：只改這兩個數字就好 */
+  --para-shift: 40px;  /* 想更右就調大，例如 3rem */
+}
+
+/* 版面：左右兩欄（你要 40/60 可改 2fr 3fr） */
+.split-track{
+  display: grid;
+  grid-template-columns: 1fr 1fr;     /* 也可改成 2fr 3fr */
+  align-items: start;
+  gap: 0;
+  position: relative;
+}
+
+/* 左欄 sticky：整段期間固定在視窗內 */
+.track-left{
+  position: sticky;
+  top: var(--header-h);
+  height: calc(100vh - var(--header-h));
+  display: grid;
+  place-items: center;
+  background: #faf8f3;                   /* 依你的底色 */
+  z-index: 2;
+}
+
+/* 右欄是一般文流內容（沒有內層滾動條） */
+.track-right{
+  min-height: calc(100vh - var(--header-h));
+}
+
+/* 右側每一屏（可做一屏一畫面） */
+.pane{
+  min-height: calc(100vh - var(--header-h));
+  position: relative;
+}
+.pane.hero{
+  background-size: cover;
+  background-position: center;
+}
+.pane.pane-white{ background:#faf8f3; }
+
+.copy{
+  min-height: calc(100vh - var(--header-h));
+  display: grid;
+  place-items: center;
+  padding: 6vh 6vw;
+}
+.copy h3{ font-size: clamp(22px, 3vw, 36px); margin: 0 0 12px; }
+.copy p{ line-height: 2.8; color:#333; margin-left: var(--para-shift); font-weight: 500;  font-size: 20px;}
+
+/* 左邊字型（可沿用你原先設定） */
+.vstack{ text-align:center; }
+.jp-vertical{
+  writing-mode: vertical-rl;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(42px, 7vw, 120px);
+  letter-spacing: .08em;
+}
+.en-vert{
+  writing-mode: vertical-rl;
+  margin-top: 12px;
+  font-size: 14px;
+  letter-spacing: .2em;
+  color:#777;
+}
+
+/* 手機：單欄直向滾動（左邊不 sticky） */
+
+@media (min-width: 901px){
+  .split-track.swap .track-left  { grid-column: 2; } /* 左欄放到右邊 */
+  .split-track.swap .track-right { grid-column: 1; } /* 右欄放到左邊 */
+}
+/* 左邊那張固定照片（你這段用了 swap，所以放在 .track-right 裡） */
+.split-track.swap .track-right .left-photo{
+  position: sticky;
+  top: var(--header-h);                       /* 若有固定 header，會剛好避開 */
+  height: calc(100vh - var(--header-h));     /* 跟視窗一樣高 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* 可選：做一層淡淡遮罩讓右邊字更清楚
+  box-shadow: inset 0 0 0 9999px rgba(255,255,255,.05);
+  */
+}
+/* 讓 swap 後的兩欄確實在同一列 */
+@media (min-width: 901px){
+  .split-track.swap .track-left  { grid-column: 2; grid-row: 1; }
+  .split-track.swap .track-right { grid-column: 1; grid-row: 1; position: relative; }
+}
+
+/* ===== 左邊照片：做成「紅框」那種內縮區塊 ===== */
+:root{
+  --header-h: 64px;       /* ← 有固定導覽列就填實際高度；沒有就 0px */
+  --lp-offset-top: 6vh;   /* 往下多少（紅框的上邊距） */
+  --lp-margin-x: 3.5vw;   /* 左右留白（紅框的左右邊距） */
+  --lp-height: 62vh;      /* 照片高度（不是滿版） */
+  /* --lp-radius: 24px;      圓角 */
+}
+
+/* sticky 讓它在視窗內停住；寬高＆邊距做成紅框感 */
+.split-track.swap .track-right .left-photo{
+  position: sticky;
+  top: calc(var(--header-h) + var(--lp-offset-top));
+  height: var(--lp-height);
+  margin: 0 var(--lp-margin-x);                /* 兩側留白 */
+  border-radius: var(--lp-radius);
+  background-size: cover;
+  background-position: center 35%;             /* 視覺重心，可改 50%/20% 等 */
+  background-repeat: no-repeat;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);           /* 需要陰影可自行加 */
+  transform: translate(100px, 60px);
+  will-change: transform;  /* 更順滑 */
+  z-index: 2;
+
+}
+
+/* 讓照片下面的內容不會被蓋住：留一點段落間距 */
+.split-track.swap .track-right .left-photo + .pane{
+  margin-top: 4vh;                             /* 紅框與下一段距離 */
+}
+
+/* 手機：改回一般文流 */
+@media (max-width: 900px){
+  .split-track.swap .track-right .left-photo{
+    position: static;
+    height: 40vh;
+    margin: 2vh 5vw;
+  }
+}
+:root { --section-gap-top: 100px; }  /* 想多就調大 跟上一段距離 */
+
+#combining{
+  margin-block-start: var(--section-gap-top);   /* 或寫 margin-top */
+}
+
+/* ----------------------map 1-------------- */
+/* 讓每個 .pane 都是定位容器（你原本已有 position:relative 就不必再加） */
+/* .pane { position: relative; } */
+
+/* ★ 將地圖固定到右側紅框位置：置於右側、垂直置中 */
+.inline-map{
+  position: absolute;
+  right: -700px;                   /* → 距右邊的距離（調這裡可左右微調） */
+  top: 450px;                     /* ↑ 盒子垂直位置（調這裡可上下微調） */
+  transform: translateY(-50%);  /* 讓它以自身高度置中 */
+  width: min(46vw, 620px);      /* 寬度上限；更寬就把 46vw 或 620px 放大 */
+  aspect-ratio: 16 / 10;        /* 高寬比例；要更方用 4/3、更扁用 16/9 */
+  border-radius: 24px;          /* 圓角 */
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,.08);
+  z-index: 1;                   /* 確保在文字上方（通常不會遮到左邊） */
+}
+
+/* 讓 iframe 充滿外框（覆蓋預設寬高） */
+.inline-map iframe{
+  position: absolute; inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* 手機時自動改為正常流排在文字下方（避免蓋住） */
+@media (max-width: 900px){
+  .inline-map{
+    position: static;
+    transform: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: 1rem;
+  }
+}
+
+/* half1 end */
+
+/* half 2 */
+/* ======= 左邊版 ( -n ) ======= */
+#combining-n {
+  margin-block-start: var(--section-gap-top);
+}
+
+/* 版面配置 */
+.split-track {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 0;
+  position: relative;
+}
+
+/* 左欄 sticky */
+.track-left-n {
+  position: sticky;
+  top: var(--header-h);
+  height: calc(100vh - var(--header-h));
+  display: grid;
+  place-items: center;
+  background: #faf8f3;
+  z-index: 2;
+}
+
+/* 右欄 */
+.track-right-n {
+  min-height: calc(100vh - var(--header-h));
+}
+
+/* 照片 */
+.left-photo-n {
+  position: sticky;
+  top: calc(var(--header-h) + var(--lp-offset-top));
+  height: var(--lp-height);
+  margin: 0 var(--lp-margin-x);
+  border-radius: var(--lp-radius);
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+/* 內文 */
+.copy-n {
+  min-height: calc(100vh - var(--header-h));
+  display: grid;
+  place-items: center;
+  padding: 6vh 6vw;
+}
+.copy-n h3 { font-size: clamp(22px, 3vw, 36px); margin: 0 0 12px; }
+.copy-n p  { line-height: 2.8; color:#333; margin-left: var(--para-shift); font-weight: 500;  font-size: 20px;}
+
+/* 標題字 */
+.jp-vertical-n {
+  writing-mode: vertical-rl;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(42px, 7vw, 120px);
+  letter-spacing: .08em;
+}
+.en-vert-n {
+  writing-mode: vertical-rl;
+  margin-top: 12px;
+  font-size: 14px;
+  letter-spacing: .2em;
+  color:#777;
+}
+
+/* Google Map */
+.inline-map-n {
+  position: absolute;
+  right: 900px;
+  top: 450px;
+  transform: translateY(-50%);
+  width: min(46vw, 620px);
+  aspect-ratio: 16 / 10;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,.08);
+  z-index: 1;
+}
+.inline-map-n iframe {
+  position: absolute; inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* ----------------------map2-------------- */
+/* 讓每個 .pane 都是定位容器（你原本已有 position:relative 就不必再加） */
+/* .pane { position: relative; } */
+
+
+/* 260126 */
+/* 單獨調整：有間冰舖芒果冰 */
+.title-ice{
+  font-size: clamp(32px, 4.8vw, 96px); /* 你要多大就改這裡 */
+}
+
+/* 讓「日文大標 + 英文」左右並排 */
+.track-left .vstack{
+  display: flex;
+  flex-direction: row;     /* 左右 */
+  align-items: center;     /* 垂直置中 */
+  justify-content: center;
+  gap: 18px;               /* 日文與英文間距 */
+}
+
+/* 英文移到右邊（仍然直排） */
+.track-left .en-vert{
+  margin-top: 0;           /* 取消原本的下方距離 */
+  margin-left: 0;          /* 你要更遠可改成 10px/20px */
+  writing-mode: vertical-rl;
+}
+
+.track-left-n .vstack-n{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.track-left-n .en-vert-n{
+  margin-top: 0;
+  margin-left: 0;
+  writing-mode: vertical-rl;
+}
+
+.title-noodle{
+  font-size: clamp(32px, 4.8vw, 96px); /* 你要多大就改這裡 */
+}
+.title-gi{
+  font-size: clamp(32px, 4.8vw, 96px); /* 你要多大就改這裡 */
+}
+
+.title-gi .bold-char{
+  font-weight: 900;   /* 想更粗就 800/900 */
+  left: 2px;   /* 往右 */
+}
+
+
+/* 地址前面加定位 icon */
+.addr{
+  display: flex;
+  align-items: center;
+  gap: 10px;              /* icon 跟文字距離 */
+}
+
+/* icon */
+.addr::before{
+  content: "";
+  width: 30px;            /* icon 大小 */
+  height: 30px;
+  flex: 0 0 30px;
+  background: url("/img/loc.png") center / contain no-repeat;
+}
+
+
+/* 通用：先不要寫死 translate，讓每張可以自己決定 */
+.split-track.swap .track-right .left-photo,
+.left-photo-n{
+  transform: translate(0, 0);
+  background-position: center 35%;
+}
+
+/* 個別微調：用 translate 移動「整個照片框」 */
+.photo-oldstreet{ transform: translate(100px, 240px); }
+.photo-noodle  { transform: translate(60px, 80px); }
+.photo-ice     { transform: translate(90px, 40px); }
+.photo-tapani  { transform: translate(120px, 30px); }
+
+/* 個別微調：只移動「照片裁切的重心」（不動框） */
+.photo-oldstreet{ background-position: 50% 30%; } /* 往上看一點 */
+.photo-ice     { background-position: 50% 55%; }  /* 往下看一點 */
+.photo-noodle  { background-position: 60% 40%; }  /* 往右看一點 */
+
+.split-track.swap .track-right .left-photo.photo-oldstreet{
+  transform: translate(100px, 140px);
+}
+
+.split-track .track-right-n .left-photo-n.photo-ice{
+  transform: translate(-15px, 140px);
+}
+.split-track .track-right-n .left-photo-n.photo-tapani{
+  transform: translate(-15px, 150px);
+}
