@@ -696,7 +696,7 @@ a:focus {
 .post-hero__img{
   position: absolute;
   inset: 0;
-  background-image: url("../img/post2.JPG"); /* ← 換成你的圖 */
+  background-image: url("../img/職人共耕者.jpg"); /* ← 換成你的圖 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -731,10 +731,11 @@ a:focus {
 }
 
 .post-hero__content h1{
-  font-size: clamp(28px, 5vw, 56px);
+  font-size: clamp(28px, 5vw, 560px);
   letter-spacing: .08em;
-  color: #fff;
+  color: #ffffffa3;
   margin: 0 0 10px;
+font-family: 'Noto Serif JP', sans-serif;
 }
 
 .post-hero__content p{

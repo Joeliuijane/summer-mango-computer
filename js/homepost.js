@@ -161,6 +161,14 @@ const POSTS = [
     excerpt: "在嚴格家教與辛勞背後，看見父母用一生教會孩子承擔與愛的方式。",
     image: "img/蔡耀煌.JPG",
     href: "post9.html"
+  },
+ {
+    title: "褪色的染髮劑，與果園裡長大的我",
+    date: "2026.03.08",
+    tag: "關於蔡承旻",
+    excerpt: "從果園成長記憶出發，蔡承旻在訪談長輩的過程中重新理解祖父母一代的責任與堅持。",
+    image: "img/TSA00787.jpg",
+    href: "post10.html"
   }
 ];
 
