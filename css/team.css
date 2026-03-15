@@ -14,7 +14,7 @@ h3,
 h4,
 h5, 
 h6 {
-    color: #4a4c70;
+    color: #e4520e;
 }
 
 a {
@@ -830,6 +830,7 @@ body, html {
   margin: 0 0 10px;
   font-size: clamp(22px, 2.6vw, 34px);
   font-weight: 700;
+  color: #c9529c;
 }
 .wf-desc{
   margin: 0;
