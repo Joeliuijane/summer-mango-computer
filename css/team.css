@@ -5,7 +5,7 @@ body {
     color: #777777;
     font-weight: 500;
     background: #faf8f3;;
-    font-family: 'Noto Serif JP', sans-serif;
+    font-family: 'Noto Serif TC', sans-serif;
 }
 
 h1,
@@ -498,7 +498,7 @@ a:focus {
 
 /* ---------------------------- */
 body, html {
-  font-family: 'Noto Serif JP', sans-serif;
+  font-family: 'Noto Serif TC', sans-serif;
   overflow-x: hidden;   /* 只擋橫向 */
   overflow-y: auto;     /* 允許直向滾動 */
 }

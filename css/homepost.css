@@ -6,7 +6,7 @@ body {
     color: #777777;
     font-weight: 500;
     background:  #faf8f3;;
-    font-family: 'Noto Serif JP', sans-serif;
+    font-family: 'Noto Serif TC', sans-serif;
 }
 
 h1,
@@ -735,7 +735,7 @@ a:focus {
   letter-spacing: .08em;
   color: #ffffffa3;
   margin: 0 0 10px;
-font-family: 'Noto Serif JP', sans-serif;
+font-family: 'Noto Serif TC', sans-serif;
 }
 
 .post-hero__content p{

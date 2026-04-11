@@ -5,7 +5,7 @@ body {
     color: #777777;
     font-weight: 500;
     background: #F5DEB3;
-    font-family: 'Noto Serif JP', sans-serif;
+    font-family: 'Noto Serif TC', sans-serif;
 }
 
 h1,
@@ -829,7 +829,7 @@ a:focus {
     z-index: 5;               /* 夠高就可以壓過任意圖片 */
     pointer-events:auto;         /* 要可選字/點擊就保留 auto */
     font-size: 80px;
-    font-family: 'Noto Serif JP', sans-serif;
+    font-family: 'Noto Serif TC', sans-serif;
   }
 }
 
@@ -853,7 +853,7 @@ a:focus {
     z-index: 2000;               /* 夠高就可以壓過任意圖片 */
     pointer-events:auto;   
     font-size: 20px;   
-    font-family: 'Noto Serif JP', sans-serif;  /* 要可選字/點擊就保留 auto */
+    font-family: 'Noto Serif TC', sans-serif;  /* 要可選字/點擊就保留 auto */
   }
 }
 
@@ -1128,7 +1128,7 @@ a:focus {
     top: 0px;
     color: #ffffff;
     font-size: 25px;
-    font-family: 'Noto Serif JP', sans-serif;
+    font-family: 'Noto Serif TC', sans-serif;
     font-weight: 900;
 }
 
@@ -2028,7 +2028,7 @@ a:focus {
 
 /* 大標 */
 .jr-ttl{
-  font-family: 'Noto Serif JP', sans-serif;
+  font-family: 'Noto Serif TC', sans-serif;
   font-weight: 800;
   font-size: clamp(72px, 10vw, 1130px);
   color: #2A2B40;
@@ -2166,7 +2166,7 @@ a:focus {
 /* ====================== 噪點層（END）====================== */
 
 .jr-news-title {
-  font-family: 'Noto Serif JP', sans-serif;/* ✅ 你可以換成喜歡的字體 */
+  font-family: 'Noto Serif TC', sans-serif;/* ✅ 你可以換成喜歡的字體 */
   font-size: 100px;                      /* ✅ 調整字體大小 */
   font-weight: 800;                     /* ✅ 調整粗細 */
   color: #2A2B40;                       /* ✅ 字體顏色 */
@@ -2355,7 +2355,7 @@ a:focus {
   position: relative;
   padding: 40px 20px;
   margin-top: 60px;
- font-family: 'Noto Serif JP', sans-serif;
+ font-family: 'Noto Serif TC', sans-serif;
 }
 
 
@@ -2806,7 +2806,7 @@ body > * { position: relative; z-index: 1; }
 }
 
 .jr-headline-marquee span{
-  font-family: 'Noto Serif JP', sans-serif;
+  font-family: 'Noto Serif TC', sans-serif;
   font-weight: 800;
   letter-spacing: .02em;
   font-size: clamp(42px, 9vw, 120px); /* 依螢幕放大縮小 */
@@ -2836,7 +2836,7 @@ body > * { position: relative; z-index: 1; }
 }
 
 .jr-play-label{
-  font-family: 'Noto Serif JP', sans-serif;
+  font-family: 'Noto Serif TC', sans-serif;
   font-size: clamp(12px, 1.1vw, 14px);
   letter-spacing: .06em;
   opacity: .9;
@@ -2889,7 +2889,7 @@ body > * { position: relative; z-index: 1; }
 /* 標題＆內文樣式（可改為中文字體） */
 .jr-cap-title{
   margin: 0 0 .15em 0;
-  font-family: 'Noto Serif JP', sans-serif;
+  font-family: 'Noto Serif TC', sans-serif;
   font-weight: 800;
   letter-spacing: .02em;
   font-size: clamp(28px, 90px, 500px);
@@ -2899,7 +2899,7 @@ body > * { position: relative; z-index: 1; }
 }
 .jr-cap-body{
   margin: 0;
-  font-family: 'Noto Serif JP', sans-serif;
+  font-family: 'Noto Serif TC', sans-serif;
   font-size: clamp(14px,25px, 80px);
   line-height: 1.6;
   color: rgba(255,255,255,.95);
@@ -2954,7 +2954,7 @@ body > * { position: relative; }   /* 拿掉 z-index:1 */
   transform: translateY(-50%);
   z-index: 1;
 
-  font-family: 'Noto Serif JP', sans-serif;
+  font-family: 'Noto Serif TC', sans-serif;
 }
 
 .jr-modal-card h3 {
