@@ -95,7 +95,7 @@ const POSTS = [
     date: "2025.12.07",
     tag: "關於蔡金松",
     excerpt: "從童年果園到一生務農，記錄蔡金松在土地上慢慢扎根的人生歷程。",
-    image: "img/一畝田的時光.JPG",
+    image: "img/homepost1.JPG",
     href: "post1.html"
   },
   {
@@ -103,7 +103,7 @@ const POSTS = [
     date: "2025.12.01",
     tag: "關於蔡金松",
     excerpt: "天未亮就下田，在風雨與收成之間，走過一輩子的果園日常。",
-    image: "img/TSA00220.jpg",
+    image: "img/homepost2.jpg",
     href: "post2.html"
   },
   {
@@ -111,7 +111,7 @@ const POSTS = [
     date: "2025.11.20",
     tag: "關於蔡金松",
     excerpt: "從務農退下後，對家族、土地與下一代的深切期望與叮嚀。",
-    image: "img/TSA00207.jpg",
+    image: "img/homepost3.jpg",
     href: "post3.html"
   },
   {
@@ -119,7 +119,7 @@ const POSTS = [
     date: "2025.11.10",
     tag: "芒果的開始",
     excerpt: "從滿山柳丁到愛文芒果，見證玉井果園轉作與產業誕生的關鍵時代。",
-    image: "img/DSCF0109.jpg",
+    image: "img/homepost4.jpg",
     href: "post4.html"
   },
   {
@@ -127,7 +127,7 @@ const POSTS = [
     date: "2025.10.28",
     tag: "玉井的變化",
     excerpt: "從童年苦力到機具輔助，果園日常映照出農業與時代的轉變。",
-    image: "img/玉井的轉變.jpg",
+    image: "img/homepost5.jpg",
     href: "post5.html"
   },
  {
@@ -135,7 +135,7 @@ const POSTS = [
     date: "2025.10.28",
     tag: "關於吳榮秀",
     excerpt: "從年輕勞動到撐起家庭，用一生的辛勞守護家與孩子。",
-    image: "img/DSCF0152.jpg",
+    image: "img/homepost6.jpg",
     href: "post6.html"
   },
  {
@@ -143,7 +143,7 @@ const POSTS = [
     date: "2025.10.28",
     tag: "關於吳榮秀",
     excerpt: "在果園與灶腳之間，用雙手創造屬於自己的芒果與生活智慧。",
-    image: "img/1751375860743.jpg",
+    image: "img/homepost7.jpg",
     href: "post7.html"
   },
  {
@@ -151,7 +151,7 @@ const POSTS = [
     date: "2025.10.28",
     tag: "關於吳榮秀",
     excerpt: "將「做工不怕苦」的人生態度，化為留給孩子的溫柔叮嚀。",
-    image: "img/家庭傳承.jpg",
+    image: "img/homepost8.jpg",
     href: "post8.html"
   },
  {
@@ -159,7 +159,7 @@ const POSTS = [
     date: "2025.10.28",
     tag: "關於蔡耀煌",
     excerpt: "在嚴格家教與辛勞背後，看見父母用一生教會孩子承擔與愛的方式。",
-    image: "img/蔡耀煌.JPG",
+    image: "img/homepost9.JPG",
     href: "post9.html"
   },
  {
@@ -167,7 +167,7 @@ const POSTS = [
     date: "2026.03.08",
     tag: "關於蔡承旻",
     excerpt: "從果園成長記憶出發，蔡承旻在訪談長輩的過程中重新理解祖父母一代的責任與堅持。",
-    image: "img/TSA00787.jpg",
+    image: "img/homepost10.jpg",
     href: "post10.html"
   }
 ];

@@ -696,7 +696,7 @@ a:focus {
 .post-hero__img{
   position: absolute;
   inset: 0;
-  background-image: url("../img/職人共耕者.jpg"); /* ← 換成你的圖 */
+  background-image: url("../img/homepost_top.jpg"); /* ← 換成你的圖 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
