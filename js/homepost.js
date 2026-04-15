@@ -181,7 +181,7 @@ function createCard(post) {
 
   card.innerHTML = `
     <div class="hp-media">
-      <img src="${post.image}" alt="${post.title}">
+      <img src="${post.image}" alt="${post.title}" loading="lazy">
     </div>
 
     <div class="hp-body">
