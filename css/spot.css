@@ -655,7 +655,7 @@ body, html {
   padding: 6vh 6vw;
 }
 .copy-n h3 { font-size: clamp(22px, 3vw, 36px); margin: 0 0 12px; }
-.copy-n p  { line-height: 2.8; color:#333; margin-left: var(--para-shift); font-weight: 500;  font-size: 20px;}
+.copy-n p  { line-height: 2.8; color:#333; margin-left: var(--para-shift); font-weight: 500;  font-size: 20px; transform: translateY(40px);}
 
 /* 標題字 */
 .jp-vertical-n {
